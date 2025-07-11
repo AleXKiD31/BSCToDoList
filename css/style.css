@@ -1,11 +1,22 @@
-    *{
-        margin:0;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+      
+    header {
+      background-color: #0c40e8;
+      color: white;
+      text-align: center;
+      padding: 1rem;
     }
+
     table{
         align-items: center;
         margin-right: auto;
         margin-left: auto;
     }
+
     h1
     {
         width: fit-content;
@@ -14,6 +25,7 @@
         margin-left: auto;
         font-size: 50px;
     }
+
     th,td{
         width: 250px;
         justify-content: center;
@@ -21,6 +33,7 @@
         font-family: 'Lucida Sans';
 
     }
+    
     td:nth-child(2){
         text-align:center;
     }
