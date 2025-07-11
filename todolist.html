@@ -23,13 +23,15 @@
         {% for id in tododict %}
         <tr>
             <td>{{tododict[id]}}</td>
-            <td><a href="/delete/{{id}}"><button class="btn btn-danger">Delete</button></a></td>
+            <td><a href="/delete/{{id}}"><button class="btn-danger">Delete</button></a></td>
         </tr>
         {% endfor %}
         <tr>
             <form method="post" action="/add">
-                <td><input type="text" name="newtodo" id="" required></td>
-                <td style="text-align: center;"><button type="submit" class="btn btn-primary">Add New</button></td>
+                <td style="text-align: center;" colspan="2">
+                    <input type="text" name="newtodo" id="inputTask" required>
+                    <button type="submit" class="btn-primary">Add New</button>
+                </td>
             </form>
         </tr>
     </table>
