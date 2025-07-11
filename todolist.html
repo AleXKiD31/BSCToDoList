@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/script.js"></script>
+    <title>TODO LIST</title>
+</head>
+<body>
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+
+            <h1 class="nabar-brand">My To Do list</h1>
+        </div>
+    </nav>
+    <br>
+    <table>
+        <tr>
+            <th>ToDo</th>
+            <th>Options</th>
+        </tr>
+        {% for id in tododict %}
+        <tr>
+            <td>{{tododict[id]}}</td>
+            <td><a href="/delete/{{id}}"><button class="btn btn-danger">Delete</button></a></td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <form method="post" action="/add">
+                <td><input type="text" name="newtodo" id="" required></td>
+                <td style="text-align: center;"><button type="submit" class="btn btn-primary">Add New</button></td>
+            </form>
+        </tr>
+    </table>
+</body>
+</html>
