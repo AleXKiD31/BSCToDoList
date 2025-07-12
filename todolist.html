@@ -22,11 +22,11 @@
             <th>Working</th>
             <th>Complete</th>
         </tr>
-        {% for id in tododict %}
+        {% for item in tododict %}
         <tr>
             <td ondrop="dropHandler(event)" ondragover="dragoverHandler(event)">
                 <div id=`{{id}}` draggable="true" ondragstart="dragstartHandler(event)">
-                    {{tododict[id]}}
+                    {{item.text_todo}}
                     <br></br>
                     <a href="/delete/{{id}}"><button class="btn-danger">Delete</button></a>
                 </div>
