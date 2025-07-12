@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <script defer src="static/js/script.js"></script>
     <title>TODO LIST</title>
 </head>
 <body>
@@ -18,17 +19,25 @@
     <table>
         <tr>
             <th>ToDo</th>
-            <th>Options</th>
+            <th>Working</th>
+            <th>Complete</th>
         </tr>
         {% for id in tododict %}
         <tr>
-            <td>{{tododict[id]}}</td>
-            <td><a href="/delete/{{id}}"><button class="btn-danger">Delete</button></a></td>
+            <td ondrop="dropHandler(event)" ondragover="dragoverHandler(event)">
+                <div id=`{{id}}` draggable="true" ondragstart="dragstartHandler(event)">
+                    {{tododict[id]}}
+                    <br></br>
+                    <a href="/delete/{{id}}"><button class="btn-danger">Delete</button></a>
+                </div>
+            </td>
+            <td ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"></td>
+            <td ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"></td>
         </tr>
         {% endfor %}
         <tr>
             <form method="post" action="/add">
-                <td style="text-align: center;" colspan="2">
+                <td style="text-align: center;" colspan="3">
                     <input type="text" name="newtodo" id="inputTask" required>
                     <button type="submit" class="btn-primary">Add New</button>
                 </td>
